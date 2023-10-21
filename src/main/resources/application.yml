@@ -1,0 +1,22 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /calculator/
+
+spring:
+  datasource:
+    dynamic:
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: FebsHikariCP
+      primary: base
+      datasource:
+        base:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password:
+          url: jdbc:mysql://localhost:3306/calculator?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true
