@@ -1,1 +1,12 @@
-# https-github.com-QIU225-832101107_calculator_backend
+```mermaid
+graph TD
+    A[数据输入] -->|工业图像| B[CLIP 图像编码器]
+    A -->|文本提示| C[CLIP 文本编码器]
+    B --> D[计算相似度]
+    C --> D
+    D -->|S(I, T) < τ| E[判定为正常]
+    D -->|S(I, T) ≥ τ| F[判定为异常]
+    F --> G[异常类别输出]
+    F --> H[异常区域标注（如适用）]
+    G --> I[可视化反馈]
+    H --> I
